@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>For loop in Flask</title>
+    <link href="{{ url_for('static', filename = 'style.css') }}" rel="stylesheet">
+</head>
+<body>
+
+<table class="table">
+    <tr class="table_tr">
+        <th class="table_th">Number of phones</th>
+    </tr>
+
+
+    {% for i in range(0, len) %}
+        <tr class="table_tr">
+        <td class="table_td">{{ i }}</td>
+        <td class="table_td">{{ array[i] }}</td>
+        <p class="info">On the website you will find phone numbers: {{ index }}</p>
+    {% endfor %}
+    </tr>
+</table>
+
+</body>
+</html>
