@@ -1,10 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Weronika</title>
+    <link href="{{ url_for('static', filename = 'main.css') }}" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+            rel="stylesheet"
+    />
+    <script
+            src="https://kit.fontawesome.com/5c0c55c6d6.js"
+            crossorigin="anonymous"
+    ></script>
+</head>
+
+<body>
+<nav>
+    <div class="wrapper">
+        <button class="burger-icon"><i class="fas fa-bars"></i></button>
+        <div class="nav-items">
+            <a href="#On">O nas</a>
+            <a href="#No">Nasza oferta</a>
+            <a href="#Ko">Kontakt</a>
+        </div>
+    </div>
+</nav>
+<header class="header" id="On">
+    <div class="hero-bg"></div>
+    <div class="hero-text">
+        <h1>Nowa<span>Telefonia</span>Komórkowa</h1>
+        <p>Witamy XX wieku</p>
+    </div>
+</header>
+<main>
+
+    <section class="about-us wrapper" id="No">
+        <h2 class="section-title">Space Number</h2>
+{#        <table class="table">#}
+{#            <tr class="table_tr">#}
+{#                <th class="table_th">Number of phones</th>#}
+{#            </tr>#}
+{##}
+{#            {% for i in range(0, len) %}#}
+{#                <tr class="table_tr">#}
+{#                <td class="table_td">{{ i }}</td>#}
+{#                <td class="table_td">{{ array[i] }}</td>#}
+{#                <p class="info">On the website you will find phone numbers: {{ index }}</p>#}
+{##}
+{#            {% endfor %}#}
+{##}
+{#            </tr>#}
+{#        </table>#}
+
+        <div class="sub">
+            <form action="/phonenumbers" method="POST">
+                <label for="title"><p class="describe">Number of Phone</p></label><br>
+                <input class="describe" type="text" name="name"><br>
+                <button class="describe" type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="products wrapper">
+        <h2 class="section-title">Nasza Oferta</h2>
+
+        <div class="products-box">
+            <div class="product first-product">
+                <div class="hero-bg"></div>
+                <div class="hero-text">
+                    <h3>Nowe Technologie Komórkowe</h3>
+                </div>
+            </div>
+
+            <div class="product second-product">
+                <div class="hero-bg"></div>
+                <div class="hero-text">
+                    <h3>Znajdź Swój Wymarzony Numer Telefonu</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact warpper" id="Ko">
+        <h2 class="section-title">Kontakt</h2>
+        <p><i class="fas fa-phone"></i>+48 000 001 002</p>
+        <p><i class="fas fa-at"></i>e-mail: mobile@komórki.pl</p>
+
+        <h3>Adres:</h3>
+        <p>ul.Komórkowa 1, 03-287 Warszawa</p>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2022 Adrian Szklarski</p>
+</footer>
 </body>
 </html>

@@ -1,20 +1,23 @@
 from flask import Flask, render_template, request, redirect
 import random
+
 # flask run --host=0.0.0.0 --port=80
+max_number = 999999999
+min_number = 111111111
 
 app = Flask(__name__)
 
 counter = 0
 array = []
-index = random.randint(1, 10)
+index = random.randint(1, 18)
 while counter < index:
-    array.append(random.randint(111111111, 999999999))
+    array.append(random.randint(min_number, max_number))
     counter += 1
 
 
-@app.route('/')
+@app.route('/', methods=('GET', 'POST'))
 def homepage():
-    return render_template("index.html", len=counter, array=array, index=index)
+    return render_template("index.html",  len=counter, array=array, index=index)
 
 
 @app.route('/', methods=('GET', 'POST'))
@@ -26,11 +29,26 @@ def click():
         return '<h1>Stop, is not safe</h1>'
 
 
+@app.route('/phonenumbers', methods=('GET', 'POST'))
+def phonenumbers():
+    if request.method == "POST":
+        number = request.form["name"]
+        if int(number) in array:
+            return f'''
+            <html>
+            <body><h1>The number is in the list</h1>
+            </body>
+            </html>'''
+        else:
+            return f'''
+            <html>
+            <body><h1>The number is not in the list</h1>
+            </body>
+            </html>'''
+    return render_template("phonenumbers.html")
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
-
-
-
 
 
