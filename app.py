@@ -12,7 +12,6 @@ while counter < index:
     counter += 1
 
 
-
 @app.route('/')
 def homepage():
     return render_template("index.html", len=counter, array=array, index=index)
@@ -20,8 +19,11 @@ def homepage():
 
 @app.route('/', methods=('GET', 'POST'))
 def click():
-    name = request.form['name']
-    return render_template('/', name=name)
+    if request.method == 'POST':
+        name = request.form['name']
+        return render_template('/', name=name)
+    elif request.method == 'GET':
+        return '<h1>Stop, is not safe</h1>'
 
 
 
