@@ -4,7 +4,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Weronika</title>
+    <title>Mobile</title>
     <link href="{{ url_for('static', filename = 'main.css') }}" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -41,36 +41,35 @@
 
 
     <section class="about-us wrapper" id="No">
+
         <table class="section-title">
             <tr class="table_tr">
-                <th class="about-us-info">Number of phones</th>
+                <th class="about-us-info ">Number of phones</th>
             </tr>
 
             {% for i in range(0, len) %}
                 <tr class="table_tr">
-                <td class="table_td">{{ i }}</td>
-                <td class="table_td">{{ array[i] }}</td>
-
+                    <td class="table_td">{{ i }}</td>
+                    <td class="table_td">{{ array[i] }}</td>
+                </tr>
             {% endfor %}
-
-            </tr>
         </table>
+
         <p class="info">On the website you will find phone numbers: {{ index }}</p><br>
         <p class="info">Enter the phone number you are looking for:</p>
-        <div class="sub">
 
+        <div class="sub">
             <form action="/phonenumbers" method="POST">
-                <input class="describe" type="tel" minlength="9" maxlength="9" name="quantity"
-                pattern="\d*" title="Numbers only, please.">
+                <input class="describe" type="tel" minlength="9" maxlength="9" name="quantity" pattern="\d*"
+                       title="Numbers only, please.">
                 <button class="describe" type="submit">Submit</button>
             </form>
         </div>
-        </p>
     </section>
 
 
     <section class="products wrapper">
-        <h2 class="section-title">Our Offer</h2>
+        <h2 class="section-title"></h2>
 
         <div class="products-box">
             <div class="product first-product">

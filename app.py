@@ -34,18 +34,10 @@ def phonenumbers():
     if request.method == "POST":
         number = request.form["quantity"]
         if int(number) in array:
-            return f'''
-            <html>
-            <body><h1>The number is in the list</h1>
-            </body>
-            </html>'''
+            massage = f'''The number is in the list'''
         else:
-            return f'''
-            <html>
-            <body><h1>The number is not in the list</h1>
-            </body>
-            </html>'''
-    return render_template("phonenumbers.html")
+            massage = f'''The number is not in the list'''
+    return render_template("phonenumbers.html", massage=massage, len=counter, array=array)
 
 
 if __name__ == '__main__':
