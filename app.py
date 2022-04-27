@@ -32,7 +32,7 @@ def click():
 @app.route('/phonenumbers', methods=('GET', 'POST'))
 def phonenumbers():
     if request.method == "POST":
-        number = request.form["name"]
+        number = request.form["quantity"]
         if int(number) in array:
             return f'''
             <html>

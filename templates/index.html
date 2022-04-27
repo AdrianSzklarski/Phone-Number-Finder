@@ -60,7 +60,8 @@
         <div class="sub">
 
             <form action="/phonenumbers" method="POST">
-                <input class="describe" type="text" name="name">
+                <input class="describe" type="tel" minlength="9" maxlength="9" name="quantity"
+                pattern="\d*" title="Numbers only, please.">
                 <button class="describe" type="submit">Submit</button>
             </form>
         </div>
