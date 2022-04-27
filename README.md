@@ -13,7 +13,7 @@
 </ul>
 
 ## Use of the programme:
-<p>The number of random numbers is limited, you can change this parameter in app.py / index. User sends query if given number is on the page and gets answer. The basic task is to work with Flask, while the frontend I made is to allow the user to ask for the phone number, not the purpose of the website itself, hence its functionality and scalability has been limited. n</p>
+<p>The number of random numbers is limited, you can change this parameter in app.py / index. User sends query if given number is on the page and gets answer. The basic task is to work with Flask, while the frontend I made is to allow the user to ask for the phone number, not the purpose of the website itself, hence its functionality and scalability has been limited.</p>
 
 ## Author:
 Programme code written by A.Szklarski 12.2021r.
